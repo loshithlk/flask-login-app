@@ -8,75 +8,9 @@
     
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
-<style type="text/css">
-/* grid container */
-.left-sidebar-grid {
-    display:grid;
-    grid-template-areas:
-        'header'
-        'main-content'
-        'left-sidebar'
-        'footer';
-}
-
-/* general column padding */
-.left-sidebar-grid > * {
-    padding:1rem;
-}
-
-/* assign columns to grid areas */
-.left-sidebar-grid > .header {
-    grid-area:header;
-    background:#f97171;
-}
-.left-sidebar-grid > .main-content {
-    grid-area:main-content;
-    background:#fff;
-}
-.left-sidebar-grid > .left-sidebar {
-    grid-area:left-sidebar;
-    background:#f5d55f;
-}
-.left-sidebar-grid > .right-sidebar {
-    grid-area:right-sidebar;
-    background:#c5ed77;
-}
-.left-sidebar-grid > .footer {
-    grid-area:footer;
-    background:#72c2f1;
-}
-
-/* tablet breakpoint */
-@media (min-width:768px) {
-    .left-sidebar-grid {
-        grid-template-columns:repeat(3, 1fr);
-        grid-template-areas:
-            'header header header'
-            'left-sidebar main-content main-content'
-            'footer footer footer';
-    }
-}   
-
-
-.image-placeholder {
-    background-color: #eee;
-    display: flex;
-    height: 180px;
-    margin: 5px;
-    width: 260px;
-}
-
-.image-placeholder > h4 {
-    align-self: center;
-    text-align: center;
-    width: 100%;
-}
-
-
-</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/default.css">
 
 
 
@@ -84,106 +18,177 @@
 
 <body>
 
-<div class="left-sidebar-grid">
-    <header class="header">
-    
-<nav class="navbar fixed-top bg-light">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="/signup.html" method="post">Student Registration</a></li>
-          <li><a href="/login.html">Student Login</a></li>
-          <li><a href="/search.html">Student Search</a></li>
+    <div class="left-sidebar-grid">
+        <header class="header">
+        
+    <nav class="navbar fixed-top bg-light">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/signup.html" method="post">Student Registration</a></li>
+              <li><a href="/login.html">Student Login</a></li>
+              <li><a href="/search.html">Student Search</a></li>
+              <li><a href="/login.html">Log out</a></li>
+            </ul>
+          </li>
         </ul>
-      </li>
-    </ul>
-    
     <h3 align="center">EduX College Student Portal</h3>
-  </div>
-  </nav>
-    
+        
+    </div>
+      
+      
+    </nav>
+        
     </header>
     <main class="main-content">
-        
-    <form method="post" action = "/signup">
-    
+            
+    <form id="updateform">
+            
+           
     <div class="formbuilder-text form-group field-text-1687000541716">
-        <label for="text-1687000541716" class="formbuilder-text-label">Full name</label>
-        <input type="text" class="form-control" name="text-1687000541716" access="false" id="text-1687000541716">
+            <label for="text-1687000541716" class="formbuilder-text-label">Full name</label>
+            <input type="text" class="form-control" name="fullname" id="fullname" value="{{setname}}">
     </div>
     <div class="formbuilder-text form-group field-text-1687000571798">
-        <label for="text-1687000571798" class="formbuilder-text-label">Registration No</label>
-        <input type="text" class="form-control" name="text-1687000571798" access="false" id="text-1687000571798">
+            <label for="text-1687000571798" class="formbuilder-text-label">Registration No</label>
+            <input type="text" class="form-control" name="regno" id="regno" value="{{setregno}}" readonly>
     </div>
     <div class="formbuilder-text form-group field-text-1687000606968">
-        <label for="text-1687000606968" class="formbuilder-text-label">Email</label>
-        <input type="text" class="form-control" name="text-1687000606968" access="false" id="text-1687000606968">
+            <label for="text-1687000606968" class="formbuilder-text-label">Email</label>
+            <input type="text" class="form-control" name="email" id="email" value="{{setemail}}" readonly>
+    </div>
+            <div class="formbuilder-text form-group field-text-1687000606968">
+            <label for="text-1687000606968" class="formbuilder-text-label">Password</label>
+            <input type="password" class="form-control" name="passw" id="passw" value="{{setpass}}">
     </div>
     <div class="formbuilder-select form-group field-select-1687000626556">
-        <label for="select-1687000626556" class="formbuilder-select-label">Degree Program</label>
-        <select class="form-control" name="select-1687000626556" id="select-1687000626556">
-            <option value="computer" selected="true" id="select-1687000626556-0">BSc in Computer Science and Engineering</option>
-            <option value="mechanical" id="select-1687000626556-1">BSc in Mechanical Engineering</option>
-            <option value="civil" id="select-1687000626556-2">BSc in Civil Engineering</option>
-            <option value="electrical" id="select-1687000626556-3">BSc in Electrical Engineering</option>
-        </select>
+            <label for="select-1687000626556" class="formbuilder-select-label">Degree Program</label>
+            <select class="form-control" name="course" id="course">
+                {% for course in courses %}
+            <option value="{{ course.course_name }}" {% if course.course_name== currentcourse %} selected {% endif %}>
+                {{ course.course_name }}
+            </option>
+            {% endfor %}
+            </select>
     </div>
     <div class="formbuilder-text form-group field-text-1687000821113">
-        <label for="text-1687000821113" class="formbuilder-text-label">Contact No</label>
-        <input type="text" class="form-control" name="text-1687000821113" access="false" id="text-1687000821113">
+            <label for="text-1687000821113" class="formbuilder-text-label">Contact No</label>
+            <input type="text" class="form-control" name="contactno" id="contactno" value="{{setcontact}}">
     </div>
     <div class="formbuilder-text form-group field-text-1687000842226">
-        <label for="text-1687000842226" class="formbuilder-text-label">GPA</label>
-        <input type="text" class="form-control" name="text-1687000842226" access="false" id="text-1687000842226">
+            <label for="text-1687000842226" class="formbuilder-text-label">GPA</label>
+            <input type="text" class="form-control" name="gpa" id="gpa" value="{{setgpa}}">
     </div>
     <div class="formbuilder-textarea form-group field-textarea-1687000856762">
-        <label for="textarea-1687000856762" class="formbuilder-textarea-label">Introduction</label>
-        <textarea type="textarea" class="form-control" name="textarea-1687000856762" access="false" id="textarea-1687000856762"></textarea>
+            <label for="textarea-1687000856762" class="formbuilder-textarea-label">Introduction</label>
+            <textarea type="textarea" class="form-control" name="intro" id="intro">{{setintro}}</textarea>
     </div>
     <div class="formbuilder-textarea form-group field-textarea-1687000862332">
-        <label for="textarea-1687000862332" class="formbuilder-textarea-label">Skills</label>
-        <textarea type="textarea" class="form-control" name="textarea-1687000862332" access="false" id="textarea-1687000862332"></textarea>
+            <label for="textarea-1687000862332" class="formbuilder-textarea-label">Skills</label>
+            <textarea type="textarea" class="form-control" name="skills" id="skills">{{setskills}}</textarea>
     </div>
     <div class="formbuilder-button form-group field-button-1687000906405">
-        <button type="submit" class="btn-success btn" name="button-1687000906405" access="false" style="success" id="button-1687000906405">Update Student Profile</button>
+            <button type="submit" class="btn-success btn" name="submit" style="success" id="button-1687000906405">Update Student Profile</button>
     </div>
-    
+        
     </form>
-    
+        
     </main>
-    
-    
-    
+        
+        
+        
     <section class="left-sidebar">
         
-        
-        <div class="w3-container">
-  <div class="w3-circle" style="width:50%">
-    <img src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg" alt="Person" style="width:100%">
-  
-  </div>
-        </br>
-        <div class="rendered-form">
-    <div class="formbuilder-file form-group field-file-1687001935130">
-        <input type="file" class="form-control" name="file-1687001935130" access="false" multiple="false" id="file-1687001935130">
+        <img src=static/images/default_image.png class="img-circle" alt="Cinque Terre" width="304" height="300"> 
+   
+    <br><br><br>
+            
+    
+    <form class="form-horizontal">
+    <fieldset>
+    
+    
+    <legend>Upload your profile picture here</legend>
+    
+    <form action="/upload" method="post">
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="filebutton">Select Image</label>
+      <div class="col-md-4">
+        <input name="uploadb" class="input-file" type="file">
+      </div>
     </div>
-    <div class="formbuilder-button form-group field-button-1687001963747">
-        <button type="button" class="btn-info btn" name="button-1687001963747" access="false" style="info" id="button-1687001963747">Upload</button>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebutton"></label>
+      <div class="col-md-4">
+        <button type="submit" name="submit" class="btn btn-success">Upload</button>
+      </div>
     </div>
-</div>
-        
-       
-        
+    </form>
+    
+    </fieldset>
+            
+           
+            
     </section>
-    <footer class="footer">
+        <footer class="footer">
+            
+            <h4 align="center">DESIGNED BY EDUX TECHNICAL COLLEGE IT DEPARTMENT</h4>
+            
+        </footer>
+    </div>
+    
+    
+    
+    
+    
+    <script>
+        document.getElementById('updateform').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const fullname = document.getElementById('fullname').value;
+            const regno = document.getElementById('regno').value;
+            const email = document.getElementById('email').value;
+            const passw = document.getElementById('passw').value;
+            const course = document.getElementById('course').value;
+            const contactno = document.getElementById('contactno').value;
+            const gpa = document.getElementById('gpa').value;
+            const intro = document.getElementById('intro').value;
+            const skills = document.getElementById('skills').value;
+    
+            // Get form data
+            const formData = {
+                fullname:fullname,
+                regno:regno,
+                email:email,
+                passw:passw,
+                course:course,
+                contactno:contactno,
+                gpa:gpa,
+                intro:intro,
+                skills:skills
+            };
+    
+            // Send PUT request using fetch
+        fetch('/update', {
+                method: 'PUT',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        });
         
-        <h4 align="center">Designed by EduX Technical College IT department</h4>
         
-    </footer>
-</div>
-
+        
+        
+    </script>
 
 </body>
+
+
+
+
+
+
 
 </html>

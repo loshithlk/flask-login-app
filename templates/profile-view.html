@@ -8,149 +8,107 @@
     
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/default.css">
+
 
     
-<style type="text/css">
-/* grid container */
-.left-sidebar-grid {
-    display:grid;
-    grid-template-areas:
-        'header'
-        'main-content'
-        'left-sidebar'
-        'footer';
-}
-
-/* general column padding */
-.left-sidebar-grid > * {
-    padding:1rem;
-}
-
-/* assign columns to grid areas */
-.left-sidebar-grid > .header {
-    grid-area:header;
-    background:#f97171;
-}
-.left-sidebar-grid > .main-content {
-    grid-area:main-content;
-    background:#fff;
-}
-.left-sidebar-grid > .left-sidebar {
-    grid-area:left-sidebar;
-    background:#f5d55f;
-}
-.left-sidebar-grid > .right-sidebar {
-    grid-area:right-sidebar;
-    background:#c5ed77;
-}
-.left-sidebar-grid > .footer {
-    grid-area:footer;
-    background:#72c2f1;
-}
-
-/* tablet breakpoint */
-@media (min-width:768px) {
-    .left-sidebar-grid {
-        grid-template-columns:repeat(3, 1fr);
-        grid-template-areas:
-            'header header header'
-            'left-sidebar main-content main-content'
-            'footer footer footer';
-    }
-}   
-
-
-</style>
-
 
 
 </head>
 
 <body>
 
-<div class="left-sidebar-grid">
-    <header class="header">
+  <div class="left-sidebar-grid">
     
-<nav class="navbar fixed-top bg-light">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="/signup.html" method="post">Student Registration</a></li>
-          <li><a href="/login.html">Student Login</a></li>
-          <li><a href="/search.html">Student Search</a></li>
-        </ul>
-      </li>
-    </ul>
+         
     
-    <h3 align="center">EduX College Student Portal</h3>
+  <header class="header">
+      
+  <nav class="navbar fixed-top bg-light">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/signup.html" method="post">Student Registration</a></li>
+            <li><a href="/login.html">Student Login</a></li>
+            <li><a href="/search.html">Student Search</a></li>
+          </ul>
+        </li>
+      </ul>
+  <h3 align="center">EduX College Student Portal</h3>
   </div>
   </nav>
-    
-    </header>
-    <main class="main-content">
+      
+     
+      
+      
+  </header>
+      
+      
+      
+  <main class="main-content">
         
-      <div class="form-group row">
-    <label for="text" class="col-4 col-form-label">Full Name</label> 
-    <div class="col-8">
-      <input id="text" name="text" type="text" class="form-control" readonly>
+          
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="text" class="col-4 col-form-label">1.Full Name:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setname}}</label> 
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="text1" class="col-4 col-form-label">Registration No</label> 
-    <div class="col-8">
-      <input id="text1" name="text1" type="text" class="form-control" readonly>
+    <hr>
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="text1" class="col-4 col-form-label">2.Registration No:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setregno}}</label> 
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Email</label> 
-    <div class="col-8">
-      <input id="text2" name="text2" type="text" class="form-control" readonly>
+    <hr>
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="text2" class="col-4 col-form-label">3.Email:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setemail}}</label> 
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="text3" class="col-4 col-form-label">Degree Program</label> 
-    <div class="col-8">
-      <input id="text3" name="text3" type="text" class="form-control" readonly>
+    <hr>
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="text3" class="col-4 col-form-label">4.Degree Program:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setdegree}}</label> 
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="text4" class="col-4 col-form-label">Contact No</label> 
-    <div class="col-8">
-      <input id="text4" name="text4" type="text" class="form-control" readonly>
+    <hr>
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="text4" class="col-4 col-form-label">5.Contact No:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setcontact}}</label> 
+    <hr>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="text5" class="col-4 col-form-label">GPA</label> 
-    <div class="col-8">
-      <input id="text5" name="text5" type="text" class="form-control" readonly>
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="text5" class="col-4 col-form-label">6.GPA:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setgpa}}</label> 
+    <hr>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="textarea" class="col-4 col-form-label">Introduction</label> 
-    <div class="col-8">
-      <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control" readonly></textarea>
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="textarea" class="col-4 col-form-label">7.Introduction:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setintro}}</label> 
+    <hr>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="textarea1" class="col-4 col-form-label">Skills</label> 
-    <div class="col-8">
-      <textarea id="textarea1" name="textarea1" cols="40" rows="5" class="form-control" readonly></textarea>
-    </div>
-  </div> 
-    
-    </main>
-        
+    <div class="formbuilder-text form-group field-text-1687000541716">
+      <label for="textarea1" class="col-4 col-form-label">8.Skills:</label> 
+      <label for="text3" class="col-4 col-form-label">{{setskills}}</label> 
+    </div> 
+      
+      
        
-
-    <footer class="footer">
-        
-        <h4 align="center">Designed by EduX Technical College IT department</h4>
-        
-    </footer>
-</div>
+      
+  </main>
+      
+    <section class="left-sidebar">
+      <img src="static/images/default_image.png" class="img-circle" width="304" height="300"> 
+    </section>
+      
+  
+  <footer class="footer">
+          
+    <h4 align="center">DESIGNED BY EDUX TECHNICAL COLLEGE IT DEPARTMENT</h4>
+          
+  </footer>
+      
+       
+  </div>
 
 
 </body>
